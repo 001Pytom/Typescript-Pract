@@ -47,3 +47,16 @@ let ninja = {
 };
 
 // you cant chnage the type of the array and it behnave the same way as variable  well u can update it buut cant change the type
+// lesson5
+// explicit types
+let character: string;
+let age: number;
+// arrays
+let ninjas: string[] = [];
+ninjas.push("yusi");
+console.log(ninjas);
+
+// union type this is saying this can be any of the two data type
+let mixed2: (string | number)[] = [];
+// here u dont need to put in bracket
+let uid: string | number;

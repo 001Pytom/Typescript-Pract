@@ -36,3 +36,15 @@ var ninja = {
     age: 12,
 };
 // you cant chnage the type of the array and it behnave the same way as variable  well u can update it buut cant change the type
+// lesson5
+// explicit types
+var character;
+var age;
+// arrays
+var ninjas = [];
+ninjas.push("yusi");
+console.log(ninjas);
+// union type this is saying this can be any of the two data type
+var mixed2 = [];
+// here u dont need to put in bracket
+var uid;
