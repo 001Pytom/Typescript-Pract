@@ -1,3 +1,4 @@
+"use strict";
 // const chaacter = "faatihat";
 // console.log(chaacter);
 // const inputs = document.querySelectorAll("input");
@@ -49,10 +50,51 @@
 // // here u dont need to put in bracket
 // let uid: string | number;
 // lesson 6
-// dynamic types (any)
-var age;
-var mixed = [];
-// here we can push any values or type of our choice
-// you can do that to objecs too
-// lesson 7
-// better workflow  and ts conflihg
+// // dynamic types (any)
+// let age: any;
+// 7;
+// // better workflow  and ts conflihg
+// functions
+// let greet: Function;
+// greet = () => {
+//   console.log("hello world");
+// };
+// const add = (a: number, b: number, c?: number | string) => {
+//     // the c is optional, so if we like, we get to not pass in an argument
+//   console.log(a + b);
+// };
+// add(5, 10);
+// to avoid repitition
+// const logDetails = (uid: string | number, item: string) => {
+//   console.log(`${item} has a uid of ${uid}`);
+// };
+// const greet = (user: { name: string; uid: string | number }) => {
+//   console.log(`${user.name} says hello`);
+// };
+// do this
+// type stringOrNum = string | number;
+// type objWithName = { name: string; uid: stringOrNum };
+// const logDetails = (uid: stringOrNum, item: string) => {
+//   console.log(`${item} has a uid of ${uid}`);
+// };
+// const greet = (user: objWithName) => {
+//   console.log(`${user.name} says hello`);
+// };
+// function signature
+// example1
+// let greet: (a: string, b: string) => void;
+// // the type has to amtch
+// greet = (name: string, greeting: string) => {
+//   console.log(`${name} says ${greeting}`);
+// };
+// //  example2
+// let calc: (a: number, b: number, c: string) => number;
+// // this means it must return a number
+// calc = (num1: number, numtwo: number, action: string) => {
+//   if (action === "add") {
+//     return num1 + numtwo;
+//   } else {
+//     return num1 - numtwo;
+//   }
+// };
+// the dom and type casting
