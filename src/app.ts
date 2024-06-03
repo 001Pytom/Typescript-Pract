@@ -1,5 +1,6 @@
-import { Invoice } from "./classes/invoice";
-import { Payments } from "./classes/Payment";
+import { Invoice } from "./classes/invoice.js";
+import { ListTemplate } from "./classes/ListTemplates.js";
+import { Payments } from "./classes/Payment.js";
 import { Hasformatted } from "./interfaces/HasFormated";
 
 // interface
@@ -60,6 +61,9 @@ const toFrom = document.querySelector("#tofrom") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 
+// list template instance
+const ul = document.querySelector("ul")!;
+const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
   let doc: Hasformatted;
@@ -68,5 +72,6 @@ form.addEventListener("submit", (e: Event) => {
   } else {
     doc = new Payments(toFrom.value, details.value, amount.valueAsNumber);
   }
-  console.log(doc);
+
+  list.render(doc, type.value, "end");
 });
