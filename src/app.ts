@@ -1,3 +1,30 @@
+import { Invoice } from "./classes/invoice";
+import { Payments } from "./classes/Payment";
+import { Hasformatted } from "./interfaces/HasFormated";
+
+// interface
+// allows us to enforce certain structure of something
+// interface isPerson {
+//   name: string;
+//   age: number;
+//   speak(a: string): void;
+//   spend(a: number): number;
+// }
+
+// const me: isPerson = {
+//   name: "shaun",
+//   age: 30,
+//   speak(text: string): void {
+//     console.log(text);
+//   },
+//   spend(amount: number): number {
+//     console.log(amount);
+//     return amount;
+//   },
+// };
+
+// console.log(me);
+// console.log("jsjsj");
 // // Dom
 // // const anchor = document.querySelector("a");
 // /* anchor.href will birng error, because typescript is saying its
@@ -8,26 +35,18 @@
 
 // console.log(anchor.href);
 
-// classes
-class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+// let docOne = new Invoice("yoshi", "web work", 250);
+// let docTwo = new Invoice("mario", "plumbing work", 200);
 
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
-  }
-  format() {
-    return `${this.client} owes E${this.amount} for ${this.details}`;
-  }
-}
+// let docs: Hasformatted[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+// console.log(docs);
 
-const invOne = new Invoice("mario", "work on the mario website", 250);
-const invTwo = new Invoice("luigi", "work on the luigi website", 300);
+// const invOne = new Invoice("mario", "work on the mario website", 250);
+// const invTwo = new Invoice("luigi", "work on the luigi website", 300);
 
-let invoices: Invoice[] = [];
+// let invoices: Invoice[] = [];
 // const form = document.querySelector("form")!;
 /*
 for it to see this as a form and nit just a rnadon element , u do this below and dont use exclamation marlk
@@ -43,5 +62,11 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-  console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+  let doc: Hasformatted;
+  if (type.value === "invoice") {
+    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payments(toFrom.value, details.value, amount.valueAsNumber);
+  }
+  console.log(doc);
 });
